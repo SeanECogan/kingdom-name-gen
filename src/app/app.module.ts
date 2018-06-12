@@ -5,11 +5,13 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { NamesControlComponent } from './names-control/names-control.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SyllablesControlComponent
+    SyllablesControlComponent,
+    NamesControlComponent
   ],
   imports: [
     BrowserModule,

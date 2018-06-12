@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { SyllablesControlComponent } from './syllables-control.component';
-import { MatSliderModule, MatSliderChange, MatSlider } from '@angular/material/slider';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
 import { By } from '@angular/platform-browser';
+import { SyllablesControlComponent } from './syllables-control.component';
 
 describe('SyllablesControlComponent', () => {
   let component: SyllablesControlComponent;

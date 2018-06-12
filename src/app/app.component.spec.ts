@@ -1,15 +1,17 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { MatSliderModule } from '@angular/material/slider';
-import { AppComponent } from './app.component';
-import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
 import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSliderModule } from '@angular/material/slider';
 import { By } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { NamesControlComponent } from './names-control/names-control.component';
+import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
   let syllablesControl: DebugElement;
+  let namesControl: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,7 +20,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        SyllablesControlComponent
+        SyllablesControlComponent,
+        NamesControlComponent
       ]
     })
     .compileComponents();
@@ -31,6 +34,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
 
     syllablesControl = fixture.debugElement.query(By.css('#syllables-control'));
+    namesControl = fixture.debugElement.query(By.css('#names-control'));
   });
 
   it('should create', () => {
@@ -39,6 +43,7 @@ describe('AppComponent', () => {
 
   it('should intialize properties with default values', () => {
     expect(component['_numberOfSyllables']).toEqual(component['DEFAULT_NUMBER_OF_SYLLABLES']);
+    expect(component['_numberOfNames']).toEqual(component['DEFAULT_NUMBER_OF_NAMES']);
   });
 
   it('should call the correct event handler when the syllables control changes', () => {
@@ -57,5 +62,23 @@ describe('AppComponent', () => {
     syllablesControl.triggerEventHandler('numberOfSyllablesChange', mockNumberOfSyllables);
 
     expect(component['_numberOfSyllables']).toEqual(mockNumberOfSyllables);
+  });
+
+  it('should call the correct event handler when the names control changes', () => {
+    spyOn(component, 'onNumberOfNamesChanged');
+
+    const mockNumberOfNames = 50;
+
+    namesControl.triggerEventHandler('numberOfNamesChange', mockNumberOfNames);
+
+    expect(component.onNumberOfNamesChanged).toHaveBeenCalledWith(mockNumberOfNames);
+  });
+
+  it('should store the number of syllables when the control changes', () => {
+    const mockNumberOfNames = 50;
+
+    namesControl.triggerEventHandler('numberOfNamesChange', mockNumberOfNames);
+
+    expect(component['_numberOfNames']).toEqual(mockNumberOfNames);
   });
 });

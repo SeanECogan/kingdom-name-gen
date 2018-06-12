@@ -1,8 +1,13 @@
 <div class="container">
-  <h1 class="mat-headline">kingdom-name-gen</h1>
-  <p class="mat-body-1">Quickly and easily generate names for medieval-fantasy kingdoms and lands!</p>
+  <h1 class="mat-display-1">kingdom-name-gen</h1>
+  <p class="mat-subheading-2">Quickly and easily generate names for medieval-fantasy kingdoms and lands!</p>
   <kng-syllables-control
     id="syllables-control"
     class="full-width"
     (numberOfSyllablesChange)="onNumberOfSyllablesChanged($event)"></kng-syllables-control>
+  <div class="spacer"></div>
+  <kng-names-control
+    id="names-control"
+    class="full-width"
+    (numberOfNamesChange)="onNumberOfNamesChanged($event)"></kng-names-control>
 </div>

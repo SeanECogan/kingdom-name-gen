@@ -37,10 +37,10 @@
       true,
       {
         "order": [
-          "static-field",
-          "instance-field",
           "static-method",
-          "instance-method"
+          "instance-method",
+          "static-field",
+          "instance-field"
         ]
       }
     ],
@@ -120,13 +120,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "kng",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "kng",
       "kebab-case"
     ],
     "no-output-on-prefix": true,

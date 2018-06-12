@@ -1,18 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-
+import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SyllablesControlComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    NoopAnimationsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

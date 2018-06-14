@@ -8,8 +8,8 @@ export class NameGeneratorService {
 
   generateNames(
     numberOfSyllables: number,
-    numberOfNames: number    
-  ) : string[] {
+    numberOfNames: number
+  ): string[] {
     const names = new Array<string>();
 
     for (let i = 0; i < numberOfNames; i++) {

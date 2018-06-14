@@ -26,7 +26,7 @@ describe('NameGeneratorService', () => {
 
     const names = service.generateNames(
       numberOfNames,
-      numberOfSyllables      
+      numberOfSyllables
     );
 
     expect(names.length).toEqual(numberOfNames);
@@ -38,10 +38,10 @@ describe('NameGeneratorService', () => {
 
     const names = service.generateNames(
       numberOfNames,
-      numberOfSyllables      
+      numberOfSyllables
     );
 
-    for (let name of names) {
+    for (const name of names) {
       expect(name[0]).toEqual(name[0].toUpperCase());
     }
   });
@@ -54,7 +54,7 @@ describe('NameGeneratorService', () => {
 
     service.generateNames(
       numberOfNames,
-      numberOfSyllables      
+      numberOfSyllables
     );
 
     expect(service['getRandomSyllable'])

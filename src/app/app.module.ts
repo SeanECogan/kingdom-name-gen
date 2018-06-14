@@ -9,13 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { NamesControlComponent } from './names-control/names-control.component';
 import { GenerateControlComponent } from './generate-control/generate-control.component';
 import { NameGeneratorService } from './services/name-generator.service';
+import { NamesDisplayComponent } from './names-display/names-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SyllablesControlComponent,
     NamesControlComponent,
-    GenerateControlComponent
+    GenerateControlComponent,
+    NamesDisplayComponent
   ],
   imports: [
     BrowserModule,

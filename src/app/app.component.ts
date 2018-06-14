@@ -12,6 +12,9 @@ export class AppComponent {
 
     this.DEFAULT_NUMBER_OF_NAMES = 5;
     this._numberOfNames = this.DEFAULT_NUMBER_OF_NAMES;
+
+    this.DEFAULT_NAMES = [];
+    this._names = [];
   }
 
   onNumberOfSyllablesChanged(event: number): void {
@@ -22,9 +25,15 @@ export class AppComponent {
     this._numberOfNames = event;
   }
 
+  onNamesGenerated(event: string[]): void {
+    this._names = event;
+  }
+
   private _numberOfSyllables: number;
   private _numberOfNames: number;
+  private _names: string[];
 
   private DEFAULT_NUMBER_OF_SYLLABLES: number;
   private DEFAULT_NUMBER_OF_NAMES: number;
+  private DEFAULT_NAMES: string[];
 }

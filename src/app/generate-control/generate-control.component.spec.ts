@@ -15,9 +15,9 @@ describe('GenerateControlComponent', () => {
     'Test3'
   ];
 
-  let fakeNameGeneratorService = 
+  const fakeNameGeneratorService =
     jasmine.createSpyObj('NameGeneratorService', ['generateNames']);
-  let generateNamesSpy = 
+  const generateNamesSpy =
     fakeNameGeneratorService.generateNames.and.returnValue(fakeNames);
 
   let generateNamesButton: DebugElement;
@@ -27,8 +27,8 @@ describe('GenerateControlComponent', () => {
       providers: [
         { provide: NameGeneratorService, useValue: fakeNameGeneratorService }
       ],
-      declarations: [ 
-        GenerateControlComponent 
+      declarations: [
+        GenerateControlComponent
       ]
     })
     .compileComponents();
@@ -62,7 +62,7 @@ describe('GenerateControlComponent', () => {
 
   it('should emit the values returned from the name generator service on button click', () => {
     spyOn(component.namesGenerate, 'emit');
-    
+
     const numberOfSyllables = 5;
     const numberOfNames = 10;
 

@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NamesControlComponent } from './names-control/names-control.component';
 import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
+import { GenerateControlComponent } from './generate-control/generate-control.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -21,7 +22,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         SyllablesControlComponent,
-        NamesControlComponent
+        NamesControlComponent,
+        GenerateControlComponent
       ]
     })
     .compileComponents();

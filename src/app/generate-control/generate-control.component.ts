@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { NameGeneratorService } from '../services/name-generator.service';
 
 @Component({
   selector: 'kng-generate-control',
@@ -7,11 +8,23 @@ import { Component, Input } from '@angular/core';
 })
 export class GenerateControlComponent {
 
-  constructor() { }
+  constructor(
+    private _nameGenerator: NameGeneratorService
+  ) {
+    this.namesGenerate = new EventEmitter<string[]>();
+  }
 
   onGenerateButtonClicked(): void {
+    const names = this._nameGenerator.generateNames(
+      this.numberOfSyllables,
+      this.numberOfNames
+    );
+
+    this.namesGenerate.emit(names);
   }
 
   @Input() numberOfSyllables: number;
   @Input() numberOfNames: number;
+
+  @Output() namesGenerate: EventEmitter<string[]>;
 }

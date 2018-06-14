@@ -8,6 +8,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import { NamesControlComponent } from './names-control/names-control.component';
 import { GenerateControlComponent } from './generate-control/generate-control.component';
+import { NameGeneratorService } from './services/name-generator.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { GenerateControlComponent } from './generate-control/generate-control.co
     MatSliderModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    NameGeneratorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

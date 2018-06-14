@@ -3,9 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSliderModule } from '@angular/material/slider';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { NamesControlComponent } from './names-control/names-control.component';
-import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
 import { GenerateControlComponent } from './generate-control/generate-control.component';
+import { NamesControlComponent } from './names-control/names-control.component';
+import { NameGeneratorService } from './services/name-generator.service';
+import { SyllablesControlComponent } from './syllables-control/syllables-control.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -18,6 +19,9 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         MatSliderModule
+      ],
+      providers: [
+        NameGeneratorService
       ],
       declarations: [
         AppComponent,

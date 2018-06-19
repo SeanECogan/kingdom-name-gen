@@ -1,6 +1,5 @@
 # KingdomNameGen
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+[![Build Status](https://travis-ci.org/SeanECogan/kingdom-name-gen.svg?branch=master)](https://travis-ci.org/SeanECogan/kingdom-name-gen)
 
 ## Development server
 

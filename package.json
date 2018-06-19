@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
-    "travis-test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+    "travis-test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS --code-coverage true",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

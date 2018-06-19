@@ -8,6 +8,7 @@ describe('NamesDisplayComponent', () => {
   let component: NamesDisplayComponent;
   let fixture: ComponentFixture<NamesDisplayComponent>;
 
+  let namesList: DebugElement;
   let nameSpans: DebugElement[];
 
   beforeEach(async(() => {
@@ -25,6 +26,7 @@ describe('NamesDisplayComponent', () => {
 
     fixture.detectChanges();
 
+    namesList = fixture.debugElement.query(By.css('#names-list'));
     nameSpans = fixture.debugElement.queryAll(By.css('.name'));
   });
 
@@ -54,5 +56,21 @@ describe('NamesDisplayComponent', () => {
     nameSpans = fixture.debugElement.queryAll(By.css('.name'));
 
     expect(nameSpans.length).toBe(component.names.length);
+  });
+
+  it('should scroll to the names list each time the names are updated', () => {
+    spyOn<any>(component, '_scrollToNamesList');
+
+    component.names = [];
+
+    component.names = [
+      'Test',
+      'Test2',
+      'Test3'
+    ];
+
+    component.names = [];
+
+    expect(component['_scrollToNamesList']).toHaveBeenCalledTimes(3);
   });
 });

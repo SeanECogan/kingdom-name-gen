@@ -54,9 +54,9 @@ describe('AppComponent', () => {
   });
 
   it('should intialize properties with default values', () => {
-    expect(component['_numberOfSyllables']).toEqual(component['DEFAULT_NUMBER_OF_SYLLABLES']);
-    expect(component['_numberOfNames']).toEqual(component['DEFAULT_NUMBER_OF_NAMES']);
-    expect(component['_names']).toEqual(component['DEFAULT_NAMES']);
+    expect(component.numberOfSyllables).toEqual(component['DEFAULT_NUMBER_OF_SYLLABLES']);
+    expect(component.numberOfNames).toEqual(component['DEFAULT_NUMBER_OF_NAMES']);
+    expect(component.names).toEqual(component['DEFAULT_NAMES']);
   });
 
   it('should call the correct event handler when the syllables control changes', () => {
@@ -74,7 +74,7 @@ describe('AppComponent', () => {
 
     syllablesControl.triggerEventHandler('numberOfSyllablesChange', mockNumberOfSyllables);
 
-    expect(component['_numberOfSyllables']).toEqual(mockNumberOfSyllables);
+    expect(component.numberOfSyllables).toEqual(mockNumberOfSyllables);
   });
 
   it('should call the correct event handler when the names control changes', () => {
@@ -92,7 +92,7 @@ describe('AppComponent', () => {
 
     namesControl.triggerEventHandler('numberOfNamesChange', mockNumberOfNames);
 
-    expect(component['_numberOfNames']).toEqual(mockNumberOfNames);
+    expect(component.numberOfNames).toEqual(mockNumberOfNames);
   });
 
   it('should call the correct event handler when the generate control generates names', () => {
@@ -118,11 +118,11 @@ describe('AppComponent', () => {
 
     generateControl.triggerEventHandler('namesGenerate', mockNames);
 
-    expect(component['_names']).toEqual(mockNames);
+    expect(component.names).toEqual(mockNames);
   });
 
   it('should not have a names display if there are no names', () => {
-    component['_names'] = [];
+    component.names = [];
 
     fixture.detectChanges();
 
@@ -132,7 +132,7 @@ describe('AppComponent', () => {
   });
 
   it('should have a names display if there are some names', () => {
-    component['_names'] = [
+    component.names = [
       'Test1',
       'Test2',
       'Test3'

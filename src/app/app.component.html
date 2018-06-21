@@ -14,11 +14,11 @@
   <kng-generate-control
     id="generate-control"
     class="full-width"
-    [numberOfSyllables]="_numberOfSyllables"
-    [numberOfNames]="_numberOfNames"
+    [numberOfSyllables]="numberOfSyllables"
+    [numberOfNames]="numberOfNames"
     (namesGenerate)="onNamesGenerated($event)"></kng-generate-control>
-  <div    
-    *ngIf="_names && _names.length > 0">
+  <div
+    *ngIf="names && names.length > 0">
     <div class="spacer"></div>
     <kng-names-display
       id="names-display"

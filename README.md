@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/SeanECogan/kingdom-name-gen.svg?branch=master)](https://travis-ci.org/SeanECogan/kingdom-name-gen)
 [![Coverage Status](https://coveralls.io/repos/github/SeanECogan/kingdom-name-gen/badge.svg)](https://coveralls.io/github/SeanECogan/kingdom-name-gen)
 
+[Check it out here!](https://www.seanecogan.com/kingdom-name-generator/)
+
 ## How to Use
 
 Use the sliders to select the number of syllables and number of names to generate. Each name will be generated with a random selection of syllables based on the number of syllables selected.

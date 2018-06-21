@@ -73,4 +73,10 @@ describe('NamesDisplayComponent', () => {
 
     expect(component['_scrollToNamesList']).toHaveBeenCalledTimes(3);
   });
+
+  it('should properly detect when the window is scrolled to the bottom', () => {
+    window.scrollTo(0, 10000);
+
+    expect(component['_scrolledToBottom']()).toBeTruthy();
+  });
 });

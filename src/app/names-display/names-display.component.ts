@@ -15,12 +15,17 @@ export class NamesDisplayComponent {
       const namesListPosition = namesList.offsetTop - 20;
       const currentPosition = window.pageYOffset;
 
-      if (currentPosition < namesListPosition) {
+      if (currentPosition < namesListPosition &&
+          !this._scrolledToBottom()) {
         window.scrollTo(0, currentPosition + 5);
       } else {
         window.clearInterval(scrollToNamesList);
       }
     });
+  }
+
+  private _scrolledToBottom(): boolean {
+    return (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight + 25;
   }
 
   @Input() set names(value: string[]) {

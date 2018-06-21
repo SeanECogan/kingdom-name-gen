@@ -25,3 +25,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Contributing
 
 Please feel free to contribute with a pull request or by opening up an issue!
+
+If you want to add new syllables, please follow the alphabetical order that the list uses, and please do not add any duplicate syllables.
